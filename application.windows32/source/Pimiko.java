@@ -3,6 +3,13 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
+import ddf.minim.*; 
+import ddf.minim.analysis.*; 
+import ddf.minim.effects.*; 
+import ddf.minim.signals.*; 
+import ddf.minim.spi.*; 
+import ddf.minim.ugens.*; 
+
 import java.util.HashMap; 
 import java.util.ArrayList; 
 import java.io.File; 
@@ -15,6 +22,15 @@ import java.io.IOException;
 public class Pimiko extends PApplet {
 
 
+
+
+
+
+
+
+Minim minim;
+AudioPlayer music;
+
 Actor player;
 Actor enemy;
 Message messagebox;
@@ -26,6 +42,11 @@ public void setup() {
   
   player = new Actor(40, 8, 4);
   enemy = new Actor(20, 8, 4);
+  
+  minim = new Minim(this);
+  music = minim.loadFile("data/music/HDE.mp3");
+  music.loop();
+  
   messagebox = new Message();
   dungeon = new Dungeon();
   font = loadFont("Font.vlw");
@@ -56,6 +77,10 @@ public void update(){
   }
 }
 
+
+//==================================
+// ISOLATION ZONE
+//==================================
 public void keyPressed(){
   if (player.alive == true){
   if (key == ' '){
@@ -151,6 +176,12 @@ public void keyPressed(){
   }
 }
 
+
+/*
+
+  This is where the stat windows live. Yeah yeah hardcoding, magic numbers, what can ya say!
+
+*/
 public void drawStatWindow(){
   text("PIMIKO", 16, 16);
   text("ENEMY", width-128, 16);
@@ -163,7 +194,7 @@ public void drawMessageWindow(){
   fill(255,255,0);
   text("MONEY : \n  " + player.currency, width/2 - 96, 16);
   fill(255,255,255);
-  text(messagebox.currentMessage, 32, 116);
+  text(messagebox.currentMessage, 16, 120);
 }
 /*
   =============

@@ -21,7 +21,7 @@ void setup() {
   enemy = new Actor(20, 8, 4);
   
   minim = new Minim(this);
-  music = minim.loadFile("music/HDE.mp3");
+  music = minim.loadFile("data/music/HDE.mp3");
   music.loop();
   
   messagebox = new Message();
