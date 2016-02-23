@@ -166,11 +166,25 @@ public void drawMessageWindow(){
   text(messagebox.currentMessage, 32, 116);
 }
 /*
-  ==========
-  |  TODO  |
-  ==========
+  =============
+  | Entities! |
+  =============
   
-  -Create an Actors class that has statistics such as ATK, DEF, HP, etc.
+  This source file contains all the entities in the game.
+  - "Actor" is a class covering any "creature" in the game, including Pimiko
+  - "Message" is just a collection of messages. Uses an arraylist to store messages at setup.
+  - "Dungeon" is the container class for the environment. Lumpee is not an actor!
+  
+  =============
+  | Extension |
+  =============
+  
+  Here's some ideas to extend the classes for your own work:
+  - What if the dungeon were 2 dimensional with randomly placed obstacles instead of linear?
+  - What if enemies moved from place to place in the 2D dungeon?
+  
+  - What if you added more statistics to the "Actor" class so you can make skill checks?
+  - How about an inventory and equipment for the player!
 */
 
 class Actor{
