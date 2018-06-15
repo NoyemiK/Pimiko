@@ -4,11 +4,6 @@ import processing.event.*;
 import processing.opengl.*; 
 
 import ddf.minim.*; 
-import ddf.minim.analysis.*; 
-import ddf.minim.effects.*; 
-import ddf.minim.signals.*; 
-import ddf.minim.spi.*; 
-import ddf.minim.ugens.*; 
 
 import java.util.HashMap; 
 import java.util.ArrayList; 
@@ -20,11 +15,6 @@ import java.io.OutputStream;
 import java.io.IOException; 
 
 public class Pimiko extends PApplet {
-
-
-
-
-
 
 
 
@@ -179,7 +169,7 @@ public void keyPressed(){
 
 /*
 
-  This is where the stat windows live. Yeah yeah hardcoding, magic numbers, what can ya say!
+  This is where the stat windows live.
 
 */
 public void drawStatWindow(){
